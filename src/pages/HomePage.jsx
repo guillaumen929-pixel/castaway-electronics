@@ -6,6 +6,7 @@ import {
   CheckCircle2, Star, ArrowRight
 } from 'lucide-react'
 import AreasServed from '../components/AreasServed'
+import BackToTopButton from '../components/BackToTopButton'
 import Eyebrow from '../components/ui/Eyebrow'
 import heroImg from '../assets/hero-circuit.webp'
 
@@ -328,7 +329,7 @@ export default function HomePage() {
       </section>
 
       {/* ─── FINAL CTA BANNER ─── */}
-      <section className="relative py-24 bg-[#0D1B2A] overflow-hidden">
+      <section id="back-to-top-trigger" className="relative py-24 bg-[#0D1B2A] overflow-hidden">
         <div className="absolute inset-0 circuit-pattern opacity-5" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <FadeUp>
@@ -353,6 +354,8 @@ export default function HomePage() {
           </FadeUp>
         </div>
       </section>
+
+      <BackToTopButton />
     </>
   )
 }
