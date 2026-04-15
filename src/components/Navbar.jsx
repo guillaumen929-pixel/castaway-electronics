@@ -41,7 +41,7 @@ export default function Navbar() {
       >
         <nav
           aria-label="Primary"
-          className="grid h-16 w-full grid-cols-[auto_1fr_auto] items-center px-4 sm:px-6 md:px-5"
+          className="grid h-20 w-full grid-cols-[auto_1fr_auto] items-center px-4 sm:px-6 md:px-5"
         >
           {/* ── Zone 1: Logo (left) ── */}
           <Link
@@ -52,7 +52,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Cast Away Cleanouts — Electronics & Recycling"
-              className="h-10 w-auto"
+              className="h-12 md:h-14 w-auto"
             />
           </Link>
 
@@ -113,7 +113,7 @@ export default function Navbar() {
       {/* ── Mobile overlay ── */}
       <div
         className={cn(
-          'fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col overflow-y-auto border-t border-white/10 bg-[#0D1B2A]/97 backdrop-blur-md md:hidden',
+          'fixed inset-x-0 top-20 bottom-0 z-50 flex flex-col overflow-y-auto border-t border-white/10 bg-[#0D1B2A]/97 backdrop-blur-md md:hidden',
           open ? 'block' : 'hidden',
         )}
         aria-hidden={!open}
