@@ -89,7 +89,7 @@ export default function QuotePage() {
 
             {/* Right: contact info */}
             <FadeUp className="lg:col-span-2 order-2" delay={0.15}>
-              <div className="bg-[#112336] p-10 lg:p-12 h-full relative overflow-hidden">
+              <div className="bg-[#112336] p-6 sm:p-10 lg:p-12 h-full relative overflow-hidden">
                 <div className="absolute inset-0 circuit-pattern opacity-5" />
                 <div className="relative z-10">
                   <Eyebrow tone="gold" className="mb-4">
@@ -123,7 +123,7 @@ export default function QuotePage() {
                       </div>
                       <div>
                         <div className="text-white/45 font-mono text-[10px] uppercase tracking-[0.12em] mb-0.5">Email</div>
-                        <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors break-all">
+                        <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors whitespace-nowrap text-[13px] sm:text-[15px]">
                           support@castawaycleanoutsfl.com
                         </div>
                       </div>
