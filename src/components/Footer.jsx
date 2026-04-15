@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0D1B2A] text-white">
+    <footer id="site-footer" className="bg-[#0D1B2A] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Col 1: Logo + Tagline */}
@@ -94,9 +94,6 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-white/40 font-mono text-[10px] uppercase tracking-[0.14em]">
-            © 2026 Cast Away Cleanouts · All rights reserved
-          </p>
           <p className="text-white/40 font-mono text-[10px] tracking-[0.1em]">
             Powered by{' '}
             <a
@@ -107,6 +104,9 @@ export default function Footer() {
             >
               Scryptera
             </a>
+          </p>
+          <p className="text-white/40 font-mono text-[10px] uppercase tracking-[0.14em]">
+            © 2026 Cast Away Cleanouts · All rights reserved
           </p>
         </div>
       </div>
