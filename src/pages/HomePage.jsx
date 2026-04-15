@@ -74,22 +74,26 @@ const SERVICES = [
     icon: Monitor,
     title: 'Electronics Recycling',
     desc: 'Responsible recycling of computers, TVs, phones, and all e-waste through certified channels.',
+    slug: 'electronics-recycling',
   },
   {
     icon: ShieldCheck,
     title: 'Data Destruction',
     desc: 'Certified hard drive shredding and data wiping for businesses and individuals.',
     featured: true,
+    slug: 'data-destruction',
   },
   {
     icon: Building2,
     title: 'Business E-Waste Pickup',
     desc: 'Scheduled bulk pickup for offices, IT departments, and corporations.',
+    slug: 'business-pickup',
   },
   {
     icon: Home,
     title: 'Residential Pickup',
     desc: 'Easy curbside or in-home electronics collection across South Florida.',
+    slug: 'residential-pickup',
   },
 ]
 
@@ -221,7 +225,7 @@ export default function HomePage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SERVICES.map(({ icon: Icon, title, desc, featured }, i) => (
+            {SERVICES.map(({ icon: Icon, title, desc, featured, slug }, i) => (
               <FadeUp key={title} delay={i * 0.1}>
                 <div
                   className={`bg-white border border-[#E0E8F0] ${featured ? 'border-l-4 border-l-[#00C4B4]' : ''} rounded-lg p-6 h-full flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-200 group`}
@@ -232,7 +236,7 @@ export default function HomePage() {
                   <h3 className="font-head font-bold uppercase tracking-[0.03em] text-[#0D1B2A] text-lg mb-2">{title}</h3>
                   <p className="text-[#4A5568] font-body text-sm leading-relaxed flex-1">{desc}</p>
                   <Link
-                    to="/services"
+                    to={`/services#${slug}`}
                     className="text-[#00C4B4] font-body font-semibold text-sm mt-4 inline-flex items-center gap-1 hover:gap-2 transition-all duration-200"
                   >
                     Learn More <ArrowRight size={14} />

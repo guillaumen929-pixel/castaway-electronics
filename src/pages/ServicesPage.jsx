@@ -28,31 +28,37 @@ const SERVICES = [
     icon: Recycle,
     title: 'Electronics Recycling',
     desc: 'We responsibly recycle all types of consumer and commercial electronics. Every item is processed through certified channels to ensure maximum material recovery and minimal environmental impact.',
+    slug: 'electronics-recycling',
   },
   {
     icon: ShieldCheck,
     title: 'Certified Data Destruction',
     desc: 'Protecting your sensitive data is our top priority. We offer certified hard drive shredding, degaussing, and data wiping services. We provide a certificate of destruction upon request.',
+    slug: 'data-destruction',
   },
   {
     icon: Building2,
     title: 'Business & Corporate E-Waste Pickup',
     desc: 'Office upgrading equipment? We offer scheduled bulk pickups for businesses, IT departments, schools, hospitals, and government agencies. No fleet is too large.',
+    slug: 'business-pickup',
   },
   {
     icon: Home,
     title: 'Residential Electronics Pickup',
     desc: 'Old TVs, computers, or phones piling up at home? We offer convenient residential pickup services throughout South Florida. Schedule a time and we\'ll come to you.',
+    slug: 'residential-pickup',
   },
   {
     icon: Server,
     title: 'IT Asset Disposition (ITAD)',
     desc: 'We help businesses responsibly retire outdated IT assets: inventory, data sanitization, certified destruction, and eco-friendly recycling or remarketing — all documented for compliance.',
+    slug: 'itad',
   },
   {
     icon: HardDrive,
     title: 'Hard Drive Shredding',
     desc: 'On-site or off-site hard drive shredding for complete data security. We destroy hard drives, SSDs, USB drives, tapes, and other storage media to DOD standards.',
+    slug: 'hard-drive-shredding',
   },
 ]
 
@@ -119,9 +125,9 @@ export default function ServicesPage() {
           </FadeUp>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map(({ icon: Icon, title, desc }, i) => (
+            {SERVICES.map(({ icon: Icon, title, desc, slug }, i) => (
               <FadeUp key={title} delay={i * 0.08}>
-                <div className="bg-white rounded-lg p-7 h-full flex flex-col group hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-[#E0E8F0] border-l-4 border-l-[#00C4B4]">
+                <div id={slug} className="bg-white rounded-lg p-7 h-full flex flex-col group hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-[#E0E8F0] border-l-4 border-l-[#00C4B4] scroll-mt-24">
                   <div className="w-12 h-12 bg-[rgba(0,196,180,0.12)] rounded-md flex items-center justify-center mb-4 group-hover:bg-[rgba(0,196,180,0.2)] transition-colors">
                     <Icon size={22} className="text-[#00C4B4]" />
                   </div>
