@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, CheckCircle2, Send, ShieldCheck, Leaf, Clock } from 'lucide-react'
 import PageBanner from '../components/PageBanner'
-import AreasServed from '../components/AreasServed'
 import Eyebrow from '../components/ui/Eyebrow'
 import vanImg from '../assets/van.webp'
 
@@ -63,7 +62,7 @@ export default function QuotePage() {
         title="Get a Free Quote"
         subtitle="No obligation — we come to you anywhere in South Florida"
         bgImage={vanImg}
-        eyebrow="// Free Quote · 24/7 Response"
+        eyebrow="// 24/7 Response"
       />
 
       {/* ─── TRUST BAR ─── */}
@@ -88,8 +87,8 @@ export default function QuotePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-0 overflow-hidden rounded-lg shadow-md">
 
-            {/* Left: contact info */}
-            <FadeUp className="lg:col-span-2">
+            {/* Right: contact info */}
+            <FadeUp className="lg:col-span-2 order-2" delay={0.15}>
               <div className="bg-[#112336] p-10 lg:p-12 h-full relative overflow-hidden">
                 <div className="absolute inset-0 circuit-pattern opacity-5" />
                 <div className="relative z-10">
@@ -165,8 +164,8 @@ export default function QuotePage() {
               </div>
             </FadeUp>
 
-            {/* Right: form */}
-            <FadeUp className="lg:col-span-3" delay={0.15}>
+            {/* Left: form */}
+            <FadeUp className="lg:col-span-3 order-1">
               <div className="bg-white p-10 lg:p-12 h-full">
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center h-full text-center py-20">
@@ -307,8 +306,6 @@ export default function QuotePage() {
         </div>
       </section>
 
-      {/* ─── AREAS SERVED ─── */}
-      <AreasServed heading="We Come to You — Serving All of South Florida" />
     </>
   )
 }
