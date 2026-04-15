@@ -8,7 +8,6 @@ import {
 import AreasServed from '../components/AreasServed'
 import Eyebrow from '../components/ui/Eyebrow'
 import heroImg from '../assets/hero-circuit.webp'
-import productsImg from '../assets/products-layout.webp'
 
 /* ── Reusable fade-up wrapper ── */
 function FadeUp({ children, delay = 0, className = '' }) {
@@ -258,7 +257,7 @@ export default function HomePage() {
                 Why South Florida<br/>
                 <span className="text-[#00C4B4]">Trusts Cast Away</span>
               </h2>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4">
                 {[
                   'Over 10 years serving South Florida',
                   'Certified, secure data destruction — your privacy guaranteed',
@@ -273,13 +272,6 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <div className="relative rounded-lg overflow-hidden border border-white/10">
-                <img
-                  src={productsImg}
-                  alt="Electronics we accept — phones, laptops, cables, drives"
-                  className="w-full h-auto"
-                />
-              </div>
             </FadeUp>
 
             {/* Right: stat cards */}

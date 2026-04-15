@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Eyebrow from './ui/Eyebrow'
+import Breadcrumbs from './Breadcrumbs'
 
 export default function PageBanner({ title, subtitle, bgImage, eyebrow }) {
   return (
@@ -24,6 +25,7 @@ export default function PageBanner({ title, subtitle, bgImage, eyebrow }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
+          <Breadcrumbs className="mb-5" />
           {eyebrow && (
             <Eyebrow tone="gold" className="mb-4 flex justify-center">
               {eyebrow}

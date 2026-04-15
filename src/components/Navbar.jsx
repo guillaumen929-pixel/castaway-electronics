@@ -47,21 +47,15 @@ export default function Navbar() {
           )}
         >
           {/* Logo */}
-          <Link to="/" className="flex flex-shrink-0 items-center gap-3">
+          <Link to="/" className="flex flex-shrink-0 items-center">
             <img
               src={logo}
-              alt="Cast Away Cleanouts Logo"
-              className="h-10 w-auto"
-              onError={(e) => { e.target.style.display = 'none' }}
+              alt="Cast Away Cleanouts — Electronics & Recycling"
+              className={cn(
+                'w-auto transition-all duration-300 ease-out',
+                scrolled && !open ? 'h-10' : 'h-12',
+              )}
             />
-            <div className="leading-tight">
-              <div className="font-head text-[17px] font-extrabold uppercase leading-none tracking-[0.04em] text-white">
-                Cast Away <span className="text-[#00C4B4]">Cleanouts</span>
-              </div>
-              <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.22em] text-[#D4AE45]">
-                Electronics · Recycling
-              </div>
-            </div>
           </Link>
 
           {/* Desktop links */}

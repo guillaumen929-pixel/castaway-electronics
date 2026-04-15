@@ -9,22 +9,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Col 1: Logo + Tagline */}
           <div>
-            <div className="flex items-center gap-3">
-              <img
-                src={logo}
-                alt="Cast Away Cleanouts Logo"
-                className="h-12 w-auto"
-                onError={(e) => { e.target.style.display = 'none' }}
-              />
-              <div className="leading-tight">
-                <div className="font-head text-lg font-extrabold uppercase tracking-[0.04em] leading-none text-white">
-                  Cast Away <span className="text-[#00C4B4]">Cleanouts</span>
-                </div>
-                <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.22em] text-[#D4AE45]">
-                  Electronics · Recycling
-                </div>
-              </div>
-            </div>
+            <img
+              src={logo}
+              alt="Cast Away Cleanouts — Electronics & Recycling"
+              className="h-16 w-auto"
+            />
             <p className="text-white/60 font-body text-sm mt-4 leading-relaxed">
               South Florida&apos;s Trusted E-Waste Recycling Partner
             </p>
