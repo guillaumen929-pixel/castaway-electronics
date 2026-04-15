@@ -12,7 +12,7 @@ export default function Footer() {
             <img
               src={logo}
               alt="Cast Away Cleanouts — Electronics & Recycling"
-              className="h-16 w-auto"
+              className="h-24 w-auto"
             />
             <p className="text-white/60 font-body text-sm mt-4 leading-relaxed">
               South Florida&apos;s Trusted E-Waste Recycling Partner

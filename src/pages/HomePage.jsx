@@ -132,18 +132,6 @@ export default function HomePage() {
         <div className="absolute inset-0 circuit-pattern opacity-10" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-6"
-          >
-            <Eyebrow tone="gold" className="flex justify-center">
-              // South Florida&apos;s E-Waste Experts · Est. 2014
-            </Eyebrow>
-          </motion.div>
-
           <motion.h1
             className="font-head font-extrabold uppercase tracking-[0.02em] text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-white leading-[0.95] mb-6"
             initial={{ opacity: 0, y: 30 }}
@@ -162,7 +150,7 @@ export default function HomePage() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             We safely recycle, repurpose, and destroy electronic devices —
-            protecting your data and the planet. Serving South Florida since 2014.
+            protecting your data and the planet.
           </motion.p>
 
           <motion.div
