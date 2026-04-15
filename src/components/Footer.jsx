@@ -19,18 +19,14 @@ export default function Footer() {
             </p>
             <div className="flex gap-4 mt-5">
               <a
-                href="https://www.facebook.com/wix"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 aria-label="Facebook"
                 className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00C4B4] hover:border-[#00C4B4] transition-colors"
               >
                 <Facebook size={16} />
               </a>
               <a
-                href="https://www.instagram.com/wix"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 aria-label="Instagram"
                 className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00C4B4] hover:border-[#00C4B4] transition-colors"
               >
@@ -94,7 +90,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-white/40 font-mono text-[10px] tracking-[0.1em]">
+          <p className="order-1 text-white/40 font-mono text-[10px] tracking-[0.1em]">
             Powered by{' '}
             <a
               href="https://scryptera.com/"
@@ -105,7 +101,7 @@ export default function Footer() {
               Scryptera
             </a>
           </p>
-          <p className="text-white/40 font-mono text-[10px] uppercase tracking-[0.14em]">
+          <p className="order-2 text-white/40 font-mono text-[10px] uppercase tracking-[0.14em]">
             © 2026 Cast Away Cleanouts · All rights reserved
           </p>
         </div>
