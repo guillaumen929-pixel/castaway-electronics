@@ -46,10 +46,10 @@ export default function Footer() {
             </h4>
             <nav className="flex flex-col gap-2">
               {[
-                { to: '/', label: 'Home' },
                 { to: '/about', label: 'About' },
                 { to: '/services', label: 'Services' },
                 { to: '/contact', label: 'Contact Us' },
+                { to: '/quote', label: 'Get a Quote' },
               ].map(({ to, label }) => (
                 <Link
                   key={to}
