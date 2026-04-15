@@ -5,7 +5,7 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon'
 import { useScroll } from '@/components/ui/use-scroll'
 import { cn } from '@/lib/utils'
-import logo from '../assets/logo.jpg'
+import logo from '../assets/logo.png'
 
 const NAV_LINKS = [
   { to: '/about', label: 'About' },
@@ -101,7 +101,7 @@ export default function Navbar() {
             size="icon"
             variant="outline"
             onClick={() => setOpen(!open)}
-            className="justify-self-end border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white md:hidden"
+            className="col-start-3 justify-self-end border-white/20 bg-transparent text-white hover:bg-white/10 hover:text-white md:hidden"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
           >
