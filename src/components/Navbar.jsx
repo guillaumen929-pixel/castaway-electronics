@@ -5,7 +5,7 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon'
 import { useScroll } from '@/components/ui/use-scroll'
 import { cn } from '@/lib/utils'
-import logo from '../assets/logo.svg'
+import logo from '../assets/logo.png'
 
 const NAV_LINKS = [
   { to: '/', label: 'Home', end: true },
@@ -33,17 +33,17 @@ export default function Navbar() {
       {/* Bar */}
       <div
         className={cn(
-          'border-b border-transparent bg-[#1B2A3B] transition-all duration-300 ease-out',
+          'border-b border-transparent bg-[#0D1B2A] transition-all duration-300 ease-out',
           scrolled && !open
-            ? 'md:mx-auto md:max-w-4xl md:rounded-xl md:border md:border-white/10 md:bg-[#1B2A3B]/95 md:shadow-xl md:backdrop-blur-sm'
+            ? 'md:mx-auto md:max-w-4xl md:rounded-xl md:border md:border-white/10 md:bg-[#0D1B2A]/95 md:shadow-xl md:backdrop-blur-sm'
             : '',
-          open && 'bg-[#1B2A3B]',
+          open && 'bg-[#0D1B2A]',
         )}
       >
         <nav
           className={cn(
             'flex w-full items-center justify-between px-4 sm:px-6 transition-all duration-300 ease-out',
-            scrolled && !open ? 'md:h-12 md:px-3' : 'h-14',
+            scrolled && !open ? 'md:h-14 md:px-3' : 'h-16',
           )}
         >
           {/* Logo */}
@@ -51,15 +51,15 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Cast Away Cleanouts Logo"
-              className="h-9 w-auto"
+              className="h-10 w-auto"
               onError={(e) => { e.target.style.display = 'none' }}
             />
             <div className="leading-tight">
-              <div className="font-head text-base font-bold leading-none text-white">
-                Cast Away Cleanouts
+              <div className="font-head text-[17px] font-extrabold uppercase leading-none tracking-[0.04em] text-white">
+                Cast Away <span className="text-[#00C4B4]">Cleanouts</span>
               </div>
-              <div className="font-body text-xs font-medium tracking-wide text-[#00B4D8]">
-                Electronics &amp; Recycling
+              <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.22em] text-[#D4AE45]">
+                Electronics · Recycling
               </div>
             </div>
           </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
                     buttonVariants({ variant: 'ghost' }),
                     'font-body text-sm font-medium transition-colors duration-200',
                     isActive
-                      ? 'bg-white/5 text-[#00B4D8] hover:bg-white/10 hover:text-[#00B4D8]'
+                      ? 'bg-white/5 text-[#00C4B4] hover:bg-white/10 hover:text-[#00C4B4]'
                       : 'text-white/80 hover:bg-white/10 hover:text-white',
                   )
                 }
@@ -92,12 +92,12 @@ export default function Navbar() {
               href="tel:9543661180"
               className="flex items-center gap-1.5 font-body text-sm text-white/70 transition-colors hover:text-white"
             >
-              <Phone size={13} className="text-[#00B4D8]" />
+              <Phone size={13} className="text-[#00C4B4]" />
               954-366-1180
             </a>
             <Button
               asChild
-              className="h-9 rounded-full bg-[#00B4D8] px-5 font-body font-semibold text-white transition-all hover:bg-[#0099BB] hover:scale-[1.03] active:scale-[0.97]"
+              className="h-9 rounded-full bg-[#00C4B4] px-5 font-head text-sm font-bold uppercase tracking-[0.08em] text-[#0D1B2A] transition-all hover:bg-[#17D4C2] hover:scale-[1.03] active:scale-[0.97]"
             >
               <Link to="/quote">Get a Free Quote →</Link>
             </Button>
@@ -119,7 +119,7 @@ export default function Navbar() {
       {/* Mobile overlay */}
       <div
         className={cn(
-          'fixed top-14 right-0 bottom-0 left-0 z-50 flex flex-col overflow-hidden border-t border-white/10 bg-[#1B2A3B]/97 backdrop-blur-md md:hidden',
+          'fixed top-16 right-0 bottom-0 left-0 z-50 flex flex-col overflow-hidden border-t border-white/10 bg-[#0D1B2A]/97 backdrop-blur-md md:hidden',
           open ? 'block' : 'hidden',
         )}
       >
@@ -143,7 +143,7 @@ export default function Navbar() {
                     buttonVariants({ variant: 'ghost' }),
                     'justify-start font-body text-base font-medium',
                     isActive
-                      ? 'bg-white/5 text-[#00B4D8]'
+                      ? 'bg-white/5 text-[#00C4B4]'
                       : 'text-white/80 hover:bg-white/10 hover:text-white',
                   )
                 }
@@ -159,12 +159,12 @@ export default function Navbar() {
               href="tel:9543661180"
               className="flex items-center justify-center gap-2 font-body text-sm text-white/70"
             >
-              <Phone size={14} className="text-[#00B4D8]" />
+              <Phone size={14} className="text-[#00C4B4]" />
               954-366-1180
             </a>
             <Button
               asChild
-              className="h-12 w-full rounded-full bg-[#00B4D8] font-body text-base font-semibold text-white hover:bg-[#0099BB]"
+              className="h-12 w-full rounded-full bg-[#00C4B4] font-head text-base font-bold uppercase tracking-[0.08em] text-[#0D1B2A] hover:bg-[#17D4C2]"
             >
               <Link to="/quote" onClick={() => setOpen(false)}>
                 Get a Free Quote →

@@ -6,6 +6,8 @@ import {
 } from 'lucide-react'
 import PageBanner from '../components/PageBanner'
 import AreasServed from '../components/AreasServed'
+import Eyebrow from '../components/ui/Eyebrow'
+import flatlayImg from '../assets/flatlay-electronics.webp'
 
 function FadeUp({ children, delay = 0, className = '' }) {
   return (
@@ -25,32 +27,32 @@ const SERVICES = [
   {
     icon: Recycle,
     title: 'Electronics Recycling',
-    desc: 'We responsibly recycle all types of consumer and commercial electronics. Every item is processed through certified channels to ensure maximum material recovery and minimal environmental impact. We recycle computers, TVs, monitors, phones, tablets, and more.',
+    desc: 'We responsibly recycle all types of consumer and commercial electronics. Every item is processed through certified channels to ensure maximum material recovery and minimal environmental impact.',
   },
   {
     icon: ShieldCheck,
     title: 'Certified Data Destruction',
-    desc: 'Protecting your sensitive data is our top priority. We offer certified hard drive shredding, degaussing, and data wiping services for individuals and businesses. We provide a certificate of destruction upon request, giving you complete peace of mind.',
+    desc: 'Protecting your sensitive data is our top priority. We offer certified hard drive shredding, degaussing, and data wiping services. We provide a certificate of destruction upon request.',
   },
   {
     icon: Building2,
     title: 'Business & Corporate E-Waste Pickup',
-    desc: 'Is your office upgrading equipment? We offer scheduled bulk e-waste pickups for businesses, IT departments, schools, hospitals, and government agencies. No fleet is too large — we handle the heavy lifting so you can focus on your business.',
+    desc: 'Office upgrading equipment? We offer scheduled bulk pickups for businesses, IT departments, schools, hospitals, and government agencies. No fleet is too large.',
   },
   {
     icon: Home,
     title: 'Residential Electronics Pickup',
-    desc: 'Have old TVs, computers, or phones piling up at home? We offer convenient residential pickup services throughout South Florida. Simply schedule a time and we\'ll come to you — no hauling required.',
+    desc: 'Old TVs, computers, or phones piling up at home? We offer convenient residential pickup services throughout South Florida. Schedule a time and we\'ll come to you.',
   },
   {
     icon: Server,
     title: 'IT Asset Disposition (ITAD)',
-    desc: 'We help businesses responsibly retire outdated IT assets. Our ITAD service includes inventory, data sanitization, certified destruction, and eco-friendly recycling or remarketing of usable equipment — all documented for compliance.',
+    desc: 'We help businesses responsibly retire outdated IT assets: inventory, data sanitization, certified destruction, and eco-friendly recycling or remarketing — all documented for compliance.',
   },
   {
     icon: HardDrive,
     title: 'Hard Drive Shredding',
-    desc: 'On-site or off-site hard drive shredding for complete data security. We destroy hard drives, SSDs, USB drives, tapes, and other storage media to DOD standards. Certificates of destruction available.',
+    desc: 'On-site or off-site hard drive shredding for complete data security. We destroy hard drives, SSDs, USB drives, tapes, and other storage media to DOD standards.',
   },
 ]
 
@@ -100,16 +102,18 @@ export default function ServicesPage() {
       <PageBanner
         title="Our Services"
         subtitle="Everything you need for responsible electronics disposal"
+        bgImage={flatlayImg}
+        eyebrow="// Complete E-Waste Solutions"
       />
 
       {/* ─── 6 SERVICE CARDS ─── */}
-      <section className="py-20 bg-[#E3E7EE]">
+      <section className="py-20 bg-[#F4F6F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp className="text-center mb-12">
-            <div className="text-[#00B4D8] font-body font-semibold text-sm uppercase tracking-widest mb-3">
-              What We Offer
-            </div>
-            <h2 className="font-head font-bold text-3xl lg:text-4xl text-[#1B2A3B]">
+            <Eyebrow tone="teal" className="mb-3 flex justify-center">
+              // 01 — What We Offer
+            </Eyebrow>
+            <h2 className="font-head font-extrabold uppercase tracking-[0.02em] text-3xl lg:text-5xl text-[#0D1B2A]">
               Complete E-Waste Solutions
             </h2>
           </FadeUp>
@@ -117,15 +121,15 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map(({ icon: Icon, title, desc }, i) => (
               <FadeUp key={title} delay={i * 0.08}>
-                <div className="bg-[#F5F7FB] rounded-md p-7 h-full flex flex-col group hover:-translate-y-1 hover:shadow-md hover:border-l-4 hover:border-l-[#00B4D8] transition-all duration-200 border border-[#E0E8F0]">
-                  <div className="w-12 h-12 bg-[#E9EDF4] rounded-md flex items-center justify-center mb-4 group-hover:bg-[#00B4D8]/10 transition-colors">
-                    <Icon size={22} className="text-[#00B4D8]" />
+                <div className="bg-white rounded-lg p-7 h-full flex flex-col group hover:-translate-y-1 hover:shadow-md transition-all duration-200 border border-[#E0E8F0] border-l-4 border-l-[#00C4B4]">
+                  <div className="w-12 h-12 bg-[rgba(0,196,180,0.12)] rounded-md flex items-center justify-center mb-4 group-hover:bg-[rgba(0,196,180,0.2)] transition-colors">
+                    <Icon size={22} className="text-[#00C4B4]" />
                   </div>
-                  <h3 className="font-head font-bold text-[#1B2A3B] text-lg mb-3">{title}</h3>
+                  <h3 className="font-head font-bold uppercase tracking-[0.03em] text-[#0D1B2A] text-lg mb-3">{title}</h3>
                   <p className="text-[#4A5568] font-body text-sm leading-relaxed flex-1">{desc}</p>
                   <Link
                     to="/quote"
-                    className="inline-flex items-center gap-1.5 text-[#00B4D8] font-body font-semibold text-sm mt-5 hover:gap-2.5 transition-all duration-200"
+                    className="inline-flex items-center gap-1.5 text-[#00C4B4] font-body font-semibold text-sm mt-5 hover:gap-2.5 transition-all duration-200"
                   >
                     Get a Quote <ArrowRight size={14} />
                   </Link>
@@ -137,47 +141,42 @@ export default function ServicesPage() {
       </section>
 
       {/* ─── ACCEPTED ITEMS ─── */}
-      <section className="py-20 bg-[#1B2A3B] relative overflow-hidden">
-        <div className="absolute inset-0 circuit-pattern opacity-8" />
+      <section className="py-20 bg-[#112336] relative overflow-hidden">
+        <div className="absolute inset-0 circuit-pattern opacity-10" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image placeholder */}
+            {/* Flat-lay image */}
             <FadeUp>
-              <div className="relative rounded-md overflow-hidden aspect-[4/3] bg-[#243447] flex items-center justify-center">
-                <div className="text-center text-white/30 font-body text-sm">
-                  <div className="w-16 h-16 mx-auto mb-3 opacity-40">
-                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 8h48v48H8z" stroke="#00B4D8" strokeWidth="2" fill="none"/>
-                      <path d="M8 20h48M20 8v48" stroke="#00B4D8" strokeWidth="1" opacity="0.4"/>
-                      <circle cx="32" cy="32" r="8" stroke="#00B4D8" strokeWidth="2" fill="none"/>
-                    </svg>
-                  </div>
-                  <p>Circuit board flat lay image</p>
-                  <p className="text-xs mt-1 opacity-60">Replace with: flatlay-dark.jpg</p>
-                </div>
-                <div className="absolute inset-0 circuit-pattern opacity-20" />
+              <div className="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+                <img
+                  src={flatlayImg}
+                  alt="Top-down flat lay of disassembled electronics with teal edge lighting"
+                  className="w-full h-auto"
+                />
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#00C4B4]" />
               </div>
             </FadeUp>
 
             {/* Checklist */}
             <FadeUp delay={0.2}>
-              <div className="text-[#00B4D8] font-body font-semibold text-sm uppercase tracking-widest mb-3">
-                Accepted Items
-              </div>
-              <h2 className="font-head font-bold text-2xl lg:text-3xl text-white mb-8">
-                Full List of Electronics We Accept
+              <Eyebrow tone="gold" className="mb-3">
+                // 02 — Accepted Items
+              </Eyebrow>
+              <h2 className="font-head font-extrabold uppercase tracking-[0.02em] text-2xl lg:text-4xl text-white mb-8 leading-[0.95]">
+                Full List of<br/>
+                <span className="text-[#00C4B4]">Electronics We Accept</span>
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {ACCEPTED.map((item, i) => (
                   <motion.div
                     key={item}
-                    className="flex items-center gap-3 text-white/80 font-body text-sm"
+                    className="flex items-center gap-3 text-white/75 font-body text-sm"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.04 }}
                   >
-                    <CheckCircle2 size={15} className="text-[#00B4D8] flex-shrink-0" />
+                    <CheckCircle2 size={15} className="text-[#00C4B4] flex-shrink-0" />
                     {item}
                   </motion.div>
                 ))}
@@ -188,31 +187,31 @@ export default function ServicesPage() {
       </section>
 
       {/* ─── HOW IT WORKS ─── */}
-      <section className="py-20 bg-[#EDEEF3]">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeUp className="text-center mb-16">
-            <div className="text-[#00B4D8] font-body font-semibold text-sm uppercase tracking-widest mb-3">
-              The Process
-            </div>
-            <h2 className="font-head font-bold text-3xl lg:text-4xl text-[#1B2A3B]">
+            <Eyebrow tone="teal" className="mb-3 flex justify-center">
+              // 03 — The Process
+            </Eyebrow>
+            <h2 className="font-head font-extrabold uppercase tracking-[0.02em] text-3xl lg:text-5xl text-[#0D1B2A]">
               How It Works — 3 Simple Steps
             </h2>
           </FadeUp>
 
           <div className="relative">
             {/* Connecting line — desktop only */}
-            <div className="hidden lg:block absolute top-[52px] left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] h-0.5 border-t-2 border-dashed border-[#00B4D8]/40" />
+            <div className="hidden lg:block absolute top-[52px] left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] h-0.5 border-t-2 border-dashed border-[#00C4B4]/40" />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
               {STEPS.map(({ icon: Icon, number, title, desc }, i) => (
                 <FadeUp key={title} delay={i * 0.15}>
                   <div className="text-center flex flex-col items-center">
                     {/* Step circle */}
-                    <div className="relative w-24 h-24 rounded-full bg-[#00B4D8] flex flex-col items-center justify-center mb-6 shadow-lg">
-                      <span className="font-head font-bold text-xs text-white/70 leading-none">{number}</span>
-                      <Icon size={24} className="text-white mt-1" />
+                    <div className="relative w-24 h-24 rounded-full bg-[#00C4B4] flex flex-col items-center justify-center mb-6 shadow-lg shadow-[rgba(0,196,180,0.3)]">
+                      <span className="font-head font-extrabold text-[11px] uppercase tracking-[0.1em] text-[#0D1B2A]/60 leading-none">{number}</span>
+                      <Icon size={24} className="text-[#0D1B2A] mt-1" />
                     </div>
-                    <h3 className="font-head font-bold text-[#1B2A3B] text-xl mb-3">{title}</h3>
+                    <h3 className="font-head font-bold uppercase tracking-[0.03em] text-[#0D1B2A] text-xl mb-3">{title}</h3>
                     <p className="text-[#4A5568] font-body text-sm leading-relaxed max-w-xs">{desc}</p>
                   </div>
                 </FadeUp>
@@ -223,7 +222,7 @@ export default function ServicesPage() {
           <FadeUp className="text-center mt-14" delay={0.4}>
             <Link
               to="/quote"
-              className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0099BB] text-white font-body font-semibold px-10 py-4 rounded-full transition-all duration-200 hover:scale-[1.03]"
+              className="inline-flex items-center gap-2 bg-[#00C4B4] hover:bg-[#17D4C2] text-[#0D1B2A] font-head font-bold uppercase tracking-[0.08em] px-10 py-4 rounded-full transition-all duration-200 hover:scale-[1.03]"
             >
               Schedule a Pickup <ArrowRight size={16} />
             </Link>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react'
+import logo from '../assets/logo.png'
 
 export default function Footer() {
   return (
@@ -8,13 +9,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Col 1: Logo + Tagline */}
           <div>
-            <div className="font-head font-bold text-xl text-white leading-tight">
-              Cast Away Cleanouts
+            <div className="flex items-center gap-3">
+              <img
+                src={logo}
+                alt="Cast Away Cleanouts Logo"
+                className="h-12 w-auto"
+                onError={(e) => { e.target.style.display = 'none' }}
+              />
+              <div className="leading-tight">
+                <div className="font-head text-lg font-extrabold uppercase tracking-[0.04em] leading-none text-white">
+                  Cast Away <span className="text-[#00C4B4]">Cleanouts</span>
+                </div>
+                <div className="mt-1 font-mono text-[9px] font-medium uppercase tracking-[0.22em] text-[#D4AE45]">
+                  Electronics · Recycling
+                </div>
+              </div>
             </div>
-            <div className="text-[#00B4D8] font-body text-sm font-medium mt-0.5">
-              Electronics &amp; Recycling
-            </div>
-            <p className="text-white/60 font-body text-sm mt-3 leading-relaxed">
+            <p className="text-white/60 font-body text-sm mt-4 leading-relaxed">
               South Florida&apos;s Trusted E-Waste Recycling Partner
             </p>
             <div className="flex gap-4 mt-5">
@@ -23,7 +34,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00B4D8] hover:border-[#00B4D8] transition-colors"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00C4B4] hover:border-[#00C4B4] transition-colors"
               >
                 <Facebook size={16} />
               </a>
@@ -32,7 +43,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00B4D8] hover:border-[#00B4D8] transition-colors"
+                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00C4B4] hover:border-[#00C4B4] transition-colors"
               >
                 <Instagram size={16} />
               </a>
@@ -41,8 +52,8 @@ export default function Footer() {
 
           {/* Col 2: Quick Links */}
           <div>
-            <h4 className="font-head font-bold text-white text-sm uppercase tracking-widest mb-4">
-              Quick Links
+            <h4 className="font-mono font-medium text-white/55 text-[10px] uppercase tracking-[0.18em] mb-4">
+              // Quick Links
             </h4>
             <nav className="flex flex-col gap-2">
               {[
@@ -54,7 +65,7 @@ export default function Footer() {
                 <Link
                   key={to}
                   to={to}
-                  className="text-white/60 hover:text-[#00B4D8] font-body text-sm transition-colors duration-200"
+                  className="text-white/60 hover:text-[#00C4B4] font-body text-sm transition-colors duration-200"
                 >
                   {label}
                 </Link>
@@ -64,26 +75,26 @@ export default function Footer() {
 
           {/* Col 3: Contact */}
           <div>
-            <h4 className="font-head font-bold text-white text-sm uppercase tracking-widest mb-4">
-              Contact
+            <h4 className="font-mono font-medium text-white/55 text-[10px] uppercase tracking-[0.18em] mb-4">
+              // Contact
             </h4>
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-3 text-white/60 font-body text-sm">
-                <MapPin size={15} className="text-[#00B4D8] mt-0.5 flex-shrink-0" />
+                <MapPin size={15} className="text-[#00C4B4] mt-0.5 flex-shrink-0" />
                 <span>226 Basin Dr, Lauderdale by the Sea, FL 33308</span>
               </div>
               <a
                 href="tel:9543661180"
-                className="flex items-center gap-3 text-white/60 hover:text-[#00B4D8] font-body text-sm transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-[#00C4B4] font-body text-sm transition-colors"
               >
-                <Phone size={15} className="text-[#00B4D8] flex-shrink-0" />
+                <Phone size={15} className="text-[#00C4B4] flex-shrink-0" />
                 954-366-1180
               </a>
               <a
                 href="mailto:Info@CastawayCleanouts.com"
-                className="flex items-center gap-3 text-white/60 hover:text-[#00B4D8] font-body text-sm transition-colors"
+                className="flex items-center gap-3 text-white/60 hover:text-[#D4AE45] font-body text-sm transition-colors"
               >
-                <Mail size={15} className="text-[#00B4D8] flex-shrink-0" />
+                <Mail size={15} className="text-[#D4AE45] flex-shrink-0" />
                 Info@CastawayCleanouts.com
               </a>
             </div>
@@ -94,16 +105,16 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-white/40 font-body text-xs">
-            © 2026 Cast Away Cleanouts. All rights reserved.
+          <p className="text-white/40 font-mono text-[10px] uppercase tracking-[0.14em]">
+            © 2026 Cast Away Cleanouts · All rights reserved
           </p>
-          <p className="text-white/40 font-body text-xs">
+          <p className="text-white/40 font-mono text-[10px] tracking-[0.1em]">
             Powered by{' '}
             <a
               href="http://cspromedia.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#00B4D8] hover:text-white transition-colors"
+              className="text-[#D4AE45] hover:text-white transition-colors"
             >
               Pros
             </a>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
+import Eyebrow from './ui/Eyebrow'
 
-export default function PageBanner({ title, subtitle, bgImage }) {
+export default function PageBanner({ title, subtitle, bgImage, eyebrow }) {
   return (
     <section
       className="relative pt-16 min-h-[320px] lg:min-h-[400px] flex items-end pb-16"
@@ -8,10 +9,10 @@ export default function PageBanner({ title, subtitle, bgImage }) {
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-      } : { backgroundColor: '#1B2A3B' }}
+      } : { backgroundColor: '#0D1B2A' }}
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#1B2A3B]/75" />
+      <div className="absolute inset-0 bg-[#0D1B2A]/80" />
 
       {/* Circuit pattern */}
       <div className="absolute inset-0 circuit-pattern opacity-10" />
@@ -23,7 +24,12 @@ export default function PageBanner({ title, subtitle, bgImage }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <h1 className="font-head font-bold text-4xl lg:text-5xl xl:text-6xl text-white mb-4">
+          {eyebrow && (
+            <Eyebrow tone="gold" className="mb-4 flex justify-center">
+              {eyebrow}
+            </Eyebrow>
+          )}
+          <h1 className="font-head font-extrabold uppercase tracking-[0.02em] text-4xl lg:text-5xl xl:text-6xl text-white mb-4">
             {title}
           </h1>
           {subtitle && (

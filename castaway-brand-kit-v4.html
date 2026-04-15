@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Cast Away Cleanouts — Brand Kit v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy:        #0D1B2A;
+    --navy-surf:   #112336;
+    --navy-raised: #1A2F42;
+    --navy-card:   #243447;
+    --teal:        #00C4B4;
+    --teal-bright: #17D4C2;
+    --teal-soft:   rgba(0,196,180,0.12);
+    --teal-border: rgba(0,196,180,0.30);
+    --gold:        #BF9B30;
+    --gold-bright: #D4AE45;
+    --gold-soft:   rgba(191,155,48,0.12);
+    --gold-border: rgba(191,155,48,0.32);
+    --white:       #FFFFFF;
+    --fg-dim:      rgba(255,255,255,0.55);
+    --fg-muted:    rgba(255,255,255,0.28);
+    --border:      rgba(255,255,255,0.07);
+    --font-head:   'Barlow Condensed', sans-serif;
+    --font-body:   'DM Sans', sans-serif;
+    --font-mono:   'IBM Plex Mono', monospace;
+  }
+  body { background:#060F17; font-family:var(--font-body); color:var(--white); padding:48px 32px; display:flex; flex-direction:column; align-items:center; }
+  .poster { width:920px; background:var(--navy-surf); border:1px solid rgba(255,255,255,0.07); border-radius:24px; overflow:hidden; }
+  .section { padding:44px 52px; border-bottom:1px solid var(--border); }
+  .section:last-child { border-bottom:none; }
+  .section-label { font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--fg-muted); margin-bottom:32px; }
+
+  /* MASTHEAD */
+  .masthead { background:var(--navy); padding:44px 52px; border-bottom:1px solid var(--border); position:relative; overflow:hidden; }
+  .masthead::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+    background: repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(0,196,180,0.025) 40px,rgba(0,196,180,0.025) 41px),
+                repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(0,196,180,0.025) 40px,rgba(0,196,180,0.025) 41px);
+    pointer-events:none; }
+  .masthead-inner { position:relative; display:flex; align-items:center; gap:36px; }
+  .masthead-logo { width:120px; height:120px; object-fit:contain; flex-shrink:0; filter:drop-shadow(0 0 28px rgba(0,196,180,0.3)); }
+  .wordmark-top { font-family:var(--font-head); font-size:46px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; color:var(--white); line-height:1; }
+  .wordmark-top .accent { color:var(--teal); }
+  .wordmark-sub { font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-top:8px; }
+  .masthead-right { margin-left:auto; text-align:right; display:flex; flex-direction:column; gap:4px; }
+  .masthead-right span   { font-family:var(--font-mono); font-size:10px; color:var(--fg-muted); letter-spacing:0.1em; }
+  .masthead-right strong { font-family:var(--font-mono); font-size:10px; color:var(--teal); letter-spacing:0.1em; font-weight:500; }
+  .masthead-right .gl    { color:var(--gold); font-family:var(--font-mono); font-size:10px; letter-spacing:0.1em; }
+
+  /* COLORS */
+  .colors-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:12px; }
+  .color-swatch { border-radius:12px; overflow:hidden; border:1px solid var(--border); }
+  .swatch-block { height:72px; width:100%; }
+  .swatch-info  { padding:10px 12px; background:var(--navy-raised); }
+  .swatch-name  { font-size:11px; font-weight:600; color:rgba(255,255,255,0.85); margin-bottom:2px; }
+  .swatch-hex   { font-family:var(--font-mono); font-size:10px; color:var(--fg-muted); letter-spacing:0.06em; }
+  .swatch-role  { font-size:9px; margin-top:3px; letter-spacing:0.05em; text-transform:uppercase; font-weight:500; }
+  .rt { color:var(--teal); } .rg { color:var(--gold); } .rd { color:var(--fg-muted); }
+  .scale-label { font-family:var(--font-mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-muted); margin-bottom:6px; margin-top:18px; }
+  .scale-row { display:grid; grid-template-columns:repeat(8,1fr); gap:4px; margin-top:4px; }
+  .scale-stop { border-radius:5px; height:26px; display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:7.5px; font-weight:500; letter-spacing:0.04em; }
+
+  /* LOGO VARIANTS — icon only, no text */
+  .logo-row { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .logo-cell { border-radius:16px; padding:32px 20px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; border:1px solid var(--border); }
+  .logo-img  { width:100px; height:100px; object-fit:contain; }
+  .logo-caption { font-family:var(--font-mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; opacity:0.4; }
+
+  /* HORIZONTAL LOCKUP — icon + wordmark only, no sub text logo */
+  .lockup-row { margin-top:14px; display:flex; align-items:center; gap:20px; padding:20px 28px; background:var(--navy); border-radius:12px; border:1px solid var(--border); }
+  .lockup-icon { width:52px; height:52px; object-fit:contain; }
+  .lockup-name { font-family:var(--font-head); font-size:26px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; color:#fff; line-height:1; }
+  .lockup-name span { color:var(--teal); }
+  .lockup-sub  { font-family:var(--font-mono); font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-top:5px; }
+  .lockup-tag  { margin-left:auto; font-family:var(--font-mono); font-size:9px; color:var(--fg-muted); letter-spacing:0.12em; }
+
+  /* SIZE GUIDE */
+  .size-row { display:flex; align-items:center; gap:20px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+  .size-label { font-family:var(--font-mono); font-size:10px; color:var(--fg-muted); width:120px; flex-shrink:0; }
+  .size-use   { font-size:12px; color:var(--fg-dim); }
+
+  /* USAGE */
+  .usage-rule { margin-top:16px; padding:14px 16px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:10px; }
+  .usage-rule-label { font-family:var(--font-mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-muted); margin-bottom:10px; }
+  .usage-rules-list { display:flex; gap:24px; flex-wrap:wrap; }
+  .usage-rules-list div { font-size:12px; color:rgba(255,255,255,0.4); display:flex; align-items:center; gap:6px; }
+
+  /* TYPOGRAPHY */
+  .type-rows { display:flex; flex-direction:column; }
+  .type-row { display:grid; grid-template-columns:175px 1fr 110px; align-items:baseline; padding:18px 0; border-bottom:1px solid rgba(255,255,255,0.05); gap:24px; }
+  .type-row:last-child { border-bottom:none; }
+  .type-meta { display:flex; flex-direction:column; gap:3px; }
+  .tmn { font-family:var(--font-mono); font-size:10px; color:var(--fg-muted); letter-spacing:0.1em; text-transform:uppercase; }
+  .tms { font-family:var(--font-mono); font-size:10px; color:var(--teal); letter-spacing:0.05em; }
+  .tu  { font-family:var(--font-mono); font-size:9px; color:var(--fg-muted); line-height:1.6; letter-spacing:0.05em; text-align:right; }
+  .sd  { font-family:var(--font-head); font-size:44px; font-weight:800; color:var(--white); line-height:1; letter-spacing:0.02em; text-transform:uppercase; }
+  .sd .t { color:var(--teal); } .sd .g { color:var(--gold); }
+  .sh2 { font-family:var(--font-head); font-size:26px; font-weight:700; color:var(--white); letter-spacing:0.03em; text-transform:uppercase; }
+  .sh3 { font-family:var(--font-head); font-size:18px; font-weight:600; color:var(--white); letter-spacing:0.04em; text-transform:uppercase; }
+  .sb  { font-family:var(--font-body); font-size:15px; color:var(--fg-dim); line-height:1.7; }
+  .ss  { font-family:var(--font-body); font-size:13px; color:var(--fg-muted); line-height:1.6; }
+  .sm  { font-family:var(--font-mono); font-size:11px; color:var(--gold); letter-spacing:0.16em; text-transform:uppercase; }
+  .sl  { font-family:var(--font-body); font-size:11px; font-weight:600; color:rgba(255,255,255,0.5); letter-spacing:0.08em; text-transform:uppercase; }
+
+  /* COMPONENTS */
+  .comp-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+  .comp-group { display:flex; flex-direction:column; gap:10px; }
+  .cgl { font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-muted); margin-bottom:4px; }
+  .btn-primary { display:inline-flex; align-items:center; justify-content:center; background:var(--teal); color:var(--navy); font-family:var(--font-head); font-size:15px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:11px 24px; border-radius:9999px; border:none; }
+  .btn-gold    { display:inline-flex; align-items:center; justify-content:center; background:var(--gold); color:var(--navy); font-family:var(--font-head); font-size:15px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:11px 24px; border-radius:9999px; border:none; }
+  .btn-outline { display:inline-flex; align-items:center; justify-content:center; background:transparent; color:var(--white); font-family:var(--font-head); font-size:15px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:10px 24px; border-radius:9999px; border:1.5px solid rgba(255,255,255,0.3); }
+  .btn-ghost   { display:inline-flex; align-items:center; justify-content:center; background:transparent; color:var(--teal); font-family:var(--font-head); font-size:15px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:10px 24px; border-radius:9999px; border:1.5px solid var(--teal-border); }
+  .badges-row { display:flex; flex-wrap:wrap; gap:6px; }
+  .badge-teal { background:var(--teal-soft); color:var(--teal); border:1px solid var(--teal-border); border-radius:9999px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.06em; padding:3px 10px; }
+  .badge-gold { background:var(--gold-soft); color:var(--gold-bright); border:1px solid var(--gold-border); border-radius:9999px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.06em; padding:3px 10px; }
+  .badge-dark { background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.1); border-radius:9999px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.06em; padding:3px 10px; }
+  .status-row { display:flex; align-items:center; gap:8px; font-size:12px; color:var(--fg-dim); }
+  .dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+  .dot-teal { background:var(--teal); box-shadow:0 0 6px var(--teal); }
+  .dot-gold { background:var(--gold); box-shadow:0 0 6px var(--gold); }
+  .dot-off  { background:rgba(255,255,255,0.2); }
+  .dot-err  { background:#EF4444; }
+  .input-demo    { width:100%; background:var(--navy); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:var(--white); font-family:var(--font-body); font-size:13px; padding:9px 12px; outline:none; }
+  .input-focused { border-color:var(--teal); box-shadow:0 0 0 3px rgba(0,196,180,0.15); }
+  .input-gold    { border-color:var(--gold-border); box-shadow:0 0 0 3px rgba(191,155,48,0.12); }
+  .cards-row { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:20px; }
+  .card-dark        { background:var(--navy-raised); border:1px solid var(--border); border-radius:12px; padding:18px 16px; }
+  .card-teal-border { background:var(--navy-raised); border:1px solid var(--border); border-left:3px solid var(--teal); border-radius:12px; padding:18px 16px; }
+  .card-gold-border { background:var(--navy-raised); border:1px solid var(--border); border-left:3px solid var(--gold); border-radius:12px; padding:18px 16px; }
+  .card-metric      { background:linear-gradient(135deg,rgba(0,196,180,0.10),rgba(191,155,48,0.08)); border:1px solid var(--teal-border); border-radius:12px; padding:18px 16px; text-align:center; }
+  .cte { font-family:var(--font-head); font-size:14px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--white); margin-bottom:6px; }
+  .cbe { font-size:12px; color:var(--fg-muted); line-height:1.5; }
+  .ml { font-family:var(--font-mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-muted); margin-bottom:6px; }
+  .mv { font-family:var(--font-head); font-size:32px; font-weight:800; color:var(--teal); letter-spacing:0.02em; line-height:1; }
+  .mv span { font-size:14px; color:var(--gold); }
+  .ms { font-family:var(--font-mono); font-size:9px; color:var(--fg-muted); margin-top:4px; letter-spacing:0.1em; text-transform:uppercase; }
+
+  /* SPACING */
+  .spec-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .sgl { font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-muted); margin-bottom:14px; }
+  .spec-row { display:flex; align-items:center; gap:12px; padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+  .sn { font-family:var(--font-mono); font-size:10px; color:var(--teal); letter-spacing:0.06em; width:90px; flex-shrink:0; }
+  .sv { font-family:var(--font-mono); font-size:10px; color:var(--fg-muted); width:40px; flex-shrink:0; }
+  .rd { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); height:24px; width:32px; }
+  .sb2 { background:linear-gradient(90deg,var(--teal),var(--gold)); height:6px; border-radius:3px; flex:1; }
+
+  /* VOICE */
+  .voice-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .voice-card { border-radius:10px; padding:16px 18px; border:1px solid var(--border); }
+  .voice-card.do   { border-color:var(--teal-border); background:var(--teal-soft); }
+  .voice-card.dont { border-color:rgba(239,68,68,0.25); background:rgba(239,68,68,0.06); }
+  .vcl { font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:8px; font-weight:500; }
+  .voice-card.do .vcl   { color:var(--teal); }
+  .voice-card.dont .vcl { color:#EF4444; }
+  .vi { font-size:12px; color:var(--fg-dim); padding:4px 0; display:flex; gap:7px; align-items:flex-start; line-height:1.5; }
+  .vd { color:var(--teal); flex-shrink:0; } .vx { color:#EF4444; flex-shrink:0; }
+
+  /* FOOTER */
+  .poster-footer { background:var(--navy); padding:18px 52px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); }
+  .fl { font-family:var(--font-mono); font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--fg-muted); }
+  .fr { font-family:var(--font-mono); font-size:9px; letter-spacing:0.1em; color:var(--gold); }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <div>
+        <div class="wordmark-top">Cast Away <span class="accent">Cleanouts</span></div>
+        <div class="wordmark-sub">Electronics &amp; Recycling · Brand Kit v2.0</div>
+      </div>
+      <div class="masthead-right">
+        <span>954-366-1180</span>
+        <strong>Info@CastawayCleanouts.com</strong>
+        <span class="gl">castawayewaste.com</span>
+        <span>Lauderdale by the Sea, FL · Est. 2014</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 01 COLORS -->
+  <div class="section">
+    <div class="section-label">01 — Color Palette · Extracted from Logo</div>
+    <div class="colors-grid">
+      <div class="color-swatch"><div class="swatch-block" style="background:#0D1B2A;"></div><div class="swatch-info"><div class="swatch-name">Navy Deep</div><div class="swatch-hex">#0D1B2A</div><div class="swatch-role rd">Badge BG · Footer</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:#112336;"></div><div class="swatch-info"><div class="swatch-name">Navy Surface</div><div class="swatch-hex">#112336</div><div class="swatch-role rd">Sections · Nav</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:#00C4B4;"></div><div class="swatch-info"><div class="swatch-name">Teal Wave</div><div class="swatch-hex">#00C4B4</div><div class="swatch-role rt">Primary · CTA · Wave</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:linear-gradient(135deg,#BF9B30,#D4AE45);"></div><div class="swatch-info"><div class="swatch-name">Circuit Gold</div><div class="swatch-hex">#BF9B30 → #D4AE45</div><div class="swatch-role rg">Recycle · Circuits</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:#FFFFFF;"></div><div class="swatch-info" style="background:#1A2F42;"><div class="swatch-name">White</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-role rd">Headlines · Body</div></div></div>
+    </div>
+    <div class="colors-grid" style="margin-top:12px;">
+      <div class="color-swatch"><div class="swatch-block" style="background:#1A2F42;"></div><div class="swatch-info"><div class="swatch-name">Navy Raised</div><div class="swatch-hex">#1A2F42</div><div class="swatch-role rd">Cards · Inputs</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:#17D4C2;"></div><div class="swatch-info"><div class="swatch-name">Teal Bright</div><div class="swatch-hex">#17D4C2</div><div class="swatch-role rt">Hover state</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:rgba(0,196,180,0.12);border:1px solid rgba(0,196,180,0.2);"></div><div class="swatch-info"><div class="swatch-name">Teal Soft</div><div class="swatch-hex">rgba(0,196,180,0.12)</div><div class="swatch-role rt">Badge BG</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:rgba(191,155,48,0.12);border:1px solid rgba(191,155,48,0.2);"></div><div class="swatch-info"><div class="swatch-name">Gold Soft</div><div class="swatch-hex">rgba(191,155,48,0.12)</div><div class="swatch-role rg">Badge BG</div></div></div>
+      <div class="color-swatch"><div class="swatch-block" style="background:#EF4444;"></div><div class="swatch-info"><div class="swatch-name">Error Red</div><div class="swatch-hex">#EF4444</div><div class="swatch-role rd">Errors · Alerts</div></div></div>
+    </div>
+    <div class="scale-label">Teal Scale</div>
+    <div class="scale-row">
+      <div class="scale-stop" style="background:#E0FAF8;color:rgba(0,0,0,0.5);">50</div>
+      <div class="scale-stop" style="background:#9FF0EA;color:rgba(0,0,0,0.5);">100</div>
+      <div class="scale-stop" style="background:#4DE0D6;color:rgba(0,0,0,0.5);">200</div>
+      <div class="scale-stop" style="background:#17D4C2;color:rgba(0,0,0,0.5);">300</div>
+      <div class="scale-stop" style="background:#00C4B4;color:rgba(0,0,0,0.6);">400 ★</div>
+      <div class="scale-stop" style="background:#009E91;color:#fff;">500</div>
+      <div class="scale-stop" style="background:#007A70;color:#fff;">600</div>
+      <div class="scale-stop" style="background:#00544D;color:#fff;">700</div>
+    </div>
+    <div class="scale-label">Gold Scale</div>
+    <div class="scale-row">
+      <div class="scale-stop" style="background:#FDF5E0;color:rgba(0,0,0,0.4);">50</div>
+      <div class="scale-stop" style="background:#F5E099;color:rgba(0,0,0,0.4);">100</div>
+      <div class="scale-stop" style="background:#E8C85A;color:rgba(0,0,0,0.5);">200</div>
+      <div class="scale-stop" style="background:#D4AE45;color:rgba(0,0,0,0.55);">300</div>
+      <div class="scale-stop" style="background:#BF9B30;color:rgba(0,0,0,0.65);">400 ★</div>
+      <div class="scale-stop" style="background:#9A7B22;color:#fff;">500</div>
+      <div class="scale-stop" style="background:#755C16;color:#fff;">600</div>
+      <div class="scale-stop" style="background:#4F3E0C;color:#fff;">700</div>
+    </div>
+  </div>
+
+  <!-- 02 TYPOGRAPHY -->
+  <div class="section">
+    <div class="section-label">02 — Typography</div>
+    <div class="type-rows">
+      <div class="type-row"><div class="type-meta"><div class="tmn">Display / H1</div><div class="tms">Barlow Condensed · 800</div></div><div class="sd">South Florida's<br/><span class="t">E-Waste</span> <span class="g">Experts</span></div><div class="tu">Hero headline<br/>Page titles</div></div>
+      <div class="type-row"><div class="type-meta"><div class="tmn">H2 Section</div><div class="tms">Barlow Condensed · 700</div></div><div class="sh2">Certified Data Destruction</div><div class="tu">Section heads<br/>Card titles</div></div>
+      <div class="type-row"><div class="type-meta"><div class="tmn">H3 Sub</div><div class="tms">Barlow Condensed · 600</div></div><div class="sh3">Electronics Recycling · Hard Drive Shredding</div><div class="tu">Sub-sections<br/>Service titles</div></div>
+      <div class="type-row"><div class="type-meta"><div class="tmn">Body</div><div class="tms">DM Sans · 400 · 15px</div></div><div class="sb">We safely recycle, repurpose, and destroy electronic devices — protecting your data and the planet. Serving South Florida since 2014.</div><div class="tu">Paragraphs<br/>Descriptions</div></div>
+      <div class="type-row"><div class="type-meta"><div class="tmn">Small</div><div class="tms">DM Sans · 400 · 13px</div></div><div class="ss">From single hard drives to full office cleanouts — no job too large or too small.</div><div class="tu">Captions<br/>Helper text</div></div>
+      <div class="type-row"><div class="type-meta"><div class="tmn">Eyebrow</div><div class="tms">IBM Plex Mono · 500 · 11px</div></div><div class="sm">// South Florida's E-Waste Experts · Est. 2014</div><div class="tu">Section labels<br/>Tags · Badges</div></div>
+      <div class="type-row"><div class="type-meta"><div class="tmn">Label</div><div class="tms">DM Sans · 600 · 11px</div></div><div class="sl">Service Type · Location · Status · Date</div><div class="tu">Form labels<br/>Table heads</div></div>
+    </div>
+  </div>
+
+  <!-- 04 COMPONENTS -->
+  <div class="section">
+    <div class="section-label">04 — UI Components</div>
+    <div class="comp-grid">
+      <div class="comp-group">
+        <div class="cgl">Buttons</div>
+        <div class="btn-primary">Get a Free Quote →</div>
+        <div class="btn-gold">Learn More →</div>
+        <div class="btn-outline">📞 Call 954-366-1180</div>
+        <div class="btn-ghost">View All Services</div>
+      </div>
+      <div class="comp-group">
+        <div class="cgl">Badges</div>
+        <div class="badges-row">
+          <div class="badge-teal">E-Waste Recycling</div>
+          <div class="badge-teal">Certified</div>
+          <div class="badge-gold">Est. 2014</div>
+          <div class="badge-gold">South Florida</div>
+          <div class="badge-dark">Licensed &amp; Insured</div>
+          <div class="badge-dark">Data Destruction</div>
+        </div>
+        <div style="margin-top:12px;" class="cgl">Status</div>
+        <div style="display:flex;flex-direction:column;gap:7px;">
+          <div class="status-row"><div class="dot dot-teal"></div>Pickup Scheduled</div>
+          <div class="status-row"><div class="dot dot-gold"></div>Quote Pending</div>
+          <div class="status-row"><div class="dot dot-off"></div>Outside Service Area</div>
+          <div class="status-row"><div class="dot dot-err"></div>Form Error</div>
+        </div>
+      </div>
+      <div class="comp-group">
+        <div class="cgl">Form Elements</div>
+        <div style="display:flex;flex-direction:column;gap:5px;"><div class="sl" style="font-size:10px;">Your Name</div><input class="input-demo" type="text" value="Chris — Lauderdale by the Sea" readonly/></div>
+        <div style="display:flex;flex-direction:column;gap:5px;"><div class="sl" style="font-size:10px;">Service · focused</div><input class="input-demo input-focused" type="text" value="Hard Drive Shredding" readonly/></div>
+        <div style="display:flex;flex-direction:column;gap:5px;"><div class="sl" style="font-size:10px;color:var(--gold);">Phone</div><input class="input-demo input-gold" type="text" value="954-366-1180" readonly/></div>
+      </div>
+    </div>
+    <div class="cards-row">
+      <div class="card-dark"><div class="cte">Dark Card</div><div class="cbe">Standard surface on dark section backgrounds.</div></div>
+      <div class="card-teal-border"><div class="cte" style="color:var(--teal);">Teal Accent</div><div class="cbe">Featured services and section callouts.</div></div>
+      <div class="card-gold-border"><div class="cte" style="color:var(--gold-bright);">Gold Accent</div><div class="cbe">Trust signals and certifications.</div></div>
+      <div class="card-metric"><div class="ml">Devices Recycled</div><div class="mv">10K<span>+</span></div><div class="ms">South Florida · Since 2014</div></div>
+    </div>
+  </div>
+
+  <!-- 05 SPACING -->
+  <div class="section">
+    <div class="section-label">05 — Spacing &amp; Radius</div>
+    <div class="spec-grid">
+      <div>
+        <div class="sgl">Border Radius</div>
+        <div class="spec-row"><span class="sn">radius-sm</span><span class="sv">6px</span><div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);height:24px;width:32px;border-radius:6px;"></div></div>
+        <div class="spec-row"><span class="sn">radius-md</span><span class="sv">12px</span><div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);height:24px;width:48px;border-radius:12px;"></div></div>
+        <div class="spec-row"><span class="sn">radius-lg</span><span class="sv">16px</span><div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);height:24px;width:64px;border-radius:16px;"></div></div>
+        <div class="spec-row"><span class="sn">radius-oval</span><span class="sv">28px</span><div style="background:rgba(0,196,180,0.15);border:1px solid var(--teal-border);height:32px;width:52px;border-radius:28px;"></div></div>
+        <div class="spec-row"><span class="sn">radius-pill</span><span class="sv">9999px</span><div style="background:rgba(0,196,180,0.15);border:1px solid var(--teal-border);height:24px;width:80px;border-radius:9999px;"></div></div>
+      </div>
+      <div>
+        <div class="sgl">Spacing Scale</div>
+        <div class="spec-row"><span class="sn">xs</span><span class="sv">4px</span><div class="sb2" style="max-width:16px;"></div></div>
+        <div class="spec-row"><span class="sn">sm</span><span class="sv">8px</span><div class="sb2" style="max-width:32px;"></div></div>
+        <div class="spec-row"><span class="sn">md</span><span class="sv">16px</span><div class="sb2" style="max-width:64px;"></div></div>
+        <div class="spec-row"><span class="sn">lg</span><span class="sv">24px</span><div class="sb2" style="max-width:96px;"></div></div>
+        <div class="spec-row"><span class="sn">xl</span><span class="sv">40px</span><div class="sb2" style="max-width:160px;"></div></div>
+        <div class="spec-row"><span class="sn">section</span><span class="sv">96px</span><div class="sb2" style="max-width:280px;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="poster-footer">
+    <div class="fl">Cast Away Cleanouts — Electronics &amp; Recycling · Brand Kit v2.0 · 2026</div>
+    <div class="fr">954-366-1180 · Info@CastawayCleanouts.com · castawayewaste.com</div>
+  </div>
+
+</div>
+</body>
+</html>
