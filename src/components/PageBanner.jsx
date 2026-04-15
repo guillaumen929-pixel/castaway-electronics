@@ -5,7 +5,7 @@ import Breadcrumbs from './Breadcrumbs'
 export default function PageBanner({ title, subtitle, bgImage, eyebrow }) {
   return (
     <section
-      className="relative pt-16 min-h-[320px] lg:min-h-[400px] flex items-end pb-16"
+      className="relative pt-32 min-h-[400px] lg:min-h-[480px] flex items-end pb-16"
       style={bgImage ? {
         backgroundImage: `url(${bgImage})`,
         backgroundSize: 'cover',
