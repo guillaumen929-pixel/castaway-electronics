@@ -44,7 +44,7 @@ export default function ContactPage() {
       `Service: ${formData.service}\n\n` +
       `Message:\n${formData.message}`
     )
-    window.location.href = `mailto:Info@CastawayCleanouts.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:support@castawaycleanoutsfl.com?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -65,7 +65,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-0 overflow-hidden rounded-lg shadow-md">
             {/* Left: info panel */}
             <FadeUp className="lg:col-span-2 order-2" delay={0.15}>
-              <div id="contact-card" className="bg-[#112336] p-10 lg:p-12 h-full relative overflow-hidden scroll-mt-24">
+              <div id="contact-card" className="bg-[#112336] p-6 sm:p-10 lg:p-12 h-full relative overflow-hidden scroll-mt-24">
                 <div className="absolute inset-0 circuit-pattern opacity-5" />
                 <div className="relative z-10">
                   <Eyebrow tone="gold" className="mb-4">
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="mailto:Info@CastawayCleanouts.com"
+                      href="mailto:support@castawaycleanoutsfl.com"
                       className="flex items-start gap-4 group"
                     >
                       <div className="w-10 h-10 rounded-full bg-[rgba(191,155,48,0.15)] flex items-center justify-center flex-shrink-0 group-hover:bg-[rgba(191,155,48,0.3)] transition-colors">
@@ -105,8 +105,8 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <div className="text-white/45 font-mono text-[10px] uppercase tracking-[0.12em] mb-0.5">Email</div>
-                        <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors whitespace-nowrap text-[13px] sm:text-sm">
-                          Info@CastawayCleanouts.com
+                        <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors whitespace-nowrap text-[11px] sm:text-sm">
+                          support@castawaycleanoutsfl.com
                         </div>
                       </div>
                     </a>
