@@ -5,7 +5,7 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon'
 import { useScroll } from '@/components/ui/use-scroll'
 import { cn } from '@/lib/utils'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.jpg'
 
 const NAV_LINKS = [
   { to: '/about', label: 'About' },
@@ -41,7 +41,7 @@ export default function Navbar() {
       >
         <nav
           aria-label="Primary"
-          className="grid h-28 w-full max-w-7xl mx-auto grid-cols-3 items-center px-4 sm:px-6 lg:px-8"
+          className="grid h-20 w-full max-w-7xl mx-auto grid-cols-3 items-center px-4 sm:px-6 lg:px-8"
         >
           {/* ── Zone 1: Logo (left) ── */}
           <Link
@@ -52,7 +52,7 @@ export default function Navbar() {
             <img
               src={logo}
               alt="Cast Away Cleanouts — Electronics & Recycling"
-              className="h-20 md:h-24 w-auto"
+              className="h-10 sm:h-12 md:h-14 w-auto max-w-[220px] sm:max-w-none"
             />
           </Link>
 
@@ -113,7 +113,7 @@ export default function Navbar() {
       {/* ── Mobile overlay ── */}
       <div
         className={cn(
-          'fixed inset-x-0 top-28 bottom-0 z-50 flex flex-col overflow-y-auto border-t border-white/10 bg-[#0D1B2A] backdrop-blur-xl shadow-2xl md:hidden',
+          'fixed inset-x-0 top-20 bottom-0 z-50 flex flex-col overflow-y-auto border-t border-white/10 bg-[#0D1B2A] backdrop-blur-xl shadow-2xl md:hidden',
           open ? 'block' : 'hidden',
         )}
         aria-hidden={!open}
