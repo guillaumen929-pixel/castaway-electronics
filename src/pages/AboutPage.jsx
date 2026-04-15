@@ -187,7 +187,7 @@ export default function AboutPage() {
                 <span className="text-[#00C4B4]">Across South Florida</span>
               </h2>
               <p className="text-white/70 font-body text-lg leading-relaxed mb-4">
-                Our branded service vans cover Broward and Palm Beach daily. Schedule a
+                Schedule a
                 pickup that fits your day — we show up on time, load fast, and leave you
                 with a receipt and peace of mind.
               </p>
