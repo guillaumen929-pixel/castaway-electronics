@@ -113,7 +113,7 @@ export default function Navbar() {
       {/* ── Mobile overlay ── */}
       <div
         className={cn(
-          'fixed inset-x-0 top-20 bottom-0 z-50 flex flex-col overflow-y-auto border-t border-white/10 bg-[#0D1B2A] backdrop-blur-xl shadow-2xl md:hidden',
+          'fixed inset-x-0 top-20 bottom-0 z-50 flex flex-col overflow-y-auto border-t border-white/10 bg-[#0D1B2A]/80 backdrop-blur-2xl backdrop-saturate-150 shadow-2xl md:hidden',
           open ? 'block' : 'hidden',
         )}
         aria-hidden={!open}
