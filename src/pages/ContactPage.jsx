@@ -65,7 +65,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-0 overflow-hidden rounded-lg shadow-md">
             {/* Left: info panel */}
             <FadeUp className="lg:col-span-2 order-2" delay={0.15}>
-              <div className="bg-[#112336] p-10 lg:p-12 h-full relative overflow-hidden">
+              <div id="contact-card" className="bg-[#112336] p-10 lg:p-12 h-full relative overflow-hidden scroll-mt-28">
                 <div className="absolute inset-0 circuit-pattern opacity-5" />
                 <div className="relative z-10">
                   <Eyebrow tone="gold" className="mb-4">
