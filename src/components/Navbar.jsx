@@ -10,7 +10,7 @@ import logo from '../assets/logo.png'
 const NAV_LINKS = [
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/contact', label: 'Contact Us' },
+  { to: '/contact#contact-card', label: 'Contact Us' },
 ]
 
 export default function Navbar() {
