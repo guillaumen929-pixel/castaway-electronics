@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, CheckCircle2, Send } from 'lucide-react'
 import PageBanner from '../components/PageBanner'
-import AreasServed from '../components/AreasServed'
 import Eyebrow from '../components/ui/Eyebrow'
 import vanImg from '../assets/van.webp'
 
@@ -57,7 +56,7 @@ export default function ContactPage() {
         title="Get a Free Quote"
         subtitle="Fast, free, and no obligation — we come to you"
         bgImage={vanImg}
-        eyebrow="// Contact · 24/7 Response"
+        eyebrow="// 24/7 Response"
       />
 
       {/* ─── CONTACT SPLIT ─── */}
@@ -65,12 +64,12 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-0 overflow-hidden rounded-lg shadow-md">
             {/* Left: info panel */}
-            <FadeUp className="lg:col-span-2">
+            <FadeUp className="lg:col-span-2 order-2" delay={0.15}>
               <div className="bg-[#112336] p-10 lg:p-12 h-full relative overflow-hidden">
                 <div className="absolute inset-0 circuit-pattern opacity-5" />
                 <div className="relative z-10">
                   <Eyebrow tone="gold" className="mb-4">
-                    // Contact · 24/7 Response
+                    // 24/7 Response
                   </Eyebrow>
                   <h2 className="font-head font-extrabold uppercase tracking-[0.02em] text-2xl lg:text-4xl text-white mb-6 leading-[0.95]">
                     Ready to Recycle<br/>
@@ -148,7 +147,7 @@ export default function ContactPage() {
             </FadeUp>
 
             {/* Right: form */}
-            <FadeUp className="lg:col-span-3" delay={0.15}>
+            <FadeUp className="lg:col-span-3 order-1">
               <div className="bg-white p-10 lg:p-12 h-full">
                 {submitted ? (
                   <div className="flex flex-col items-center justify-center h-full text-center py-20">
@@ -280,8 +279,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ─── AREAS SERVED ─── */}
-      <AreasServed heading="We Come to You — Serving All of South Florida" />
     </>
   )
 }
