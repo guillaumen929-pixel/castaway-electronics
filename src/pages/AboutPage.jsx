@@ -85,7 +85,7 @@ export default function AboutPage() {
               <p>
                 Cast Away Cleanouts — Electronics &amp; Recycling is a professional e-waste
                 recycling and certified data destruction company serving South Florida since
-                2014. As a sister company to Cast Away Cleanouts Estate &amp; Property
+                2014. As a relative company to Cast Away Cleanouts Estate &amp; Property
                 Cleanouts, we bring the same trusted, reliable service to the world of
                 electronics disposal.
               </p>
