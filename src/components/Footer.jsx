@@ -76,11 +76,11 @@ export default function Footer() {
                 954-366-1180
               </a>
               <a
-                href="mailto:Info@CastawayCleanouts.com"
-                className="flex items-center gap-3 text-white/60 hover:text-[#D4AE45] font-body text-sm transition-colors"
+                href="mailto:support@castawaycleanoutsfl.com"
+                className="flex items-center gap-3 text-white/60 hover:text-[#D4AE45] font-body text-[13px] sm:text-sm transition-colors whitespace-nowrap"
               >
                 <Mail size={15} className="text-[#D4AE45] flex-shrink-0" />
-                Info@CastawayCleanouts.com
+                support@castawaycleanoutsfl.com
               </a>
             </div>
           </div>

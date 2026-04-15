@@ -50,7 +50,7 @@ export default function QuotePage() {
       `Service: ${formData.service}\n\n` +
       `Message:\n${formData.message}`
     )
-    window.location.href = `mailto:Info@CastawayCleanouts.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:support@castawaycleanoutsfl.com?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -117,14 +117,14 @@ export default function QuotePage() {
                       </div>
                     </a>
 
-                    <a href="mailto:Info@CastawayCleanouts.com" className="flex items-start gap-4 group">
+                    <a href="mailto:support@castawaycleanoutsfl.com" className="flex items-start gap-4 group">
                       <div className="w-10 h-10 rounded-full bg-[rgba(191,155,48,0.15)] flex items-center justify-center flex-shrink-0 group-hover:bg-[rgba(191,155,48,0.3)] transition-colors">
                         <Mail size={16} className="text-[#D4AE45]" />
                       </div>
                       <div>
                         <div className="text-white/45 font-mono text-[10px] uppercase tracking-[0.12em] mb-0.5">Email</div>
                         <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors break-all">
-                          Info@CastawayCleanouts.com
+                          support@castawaycleanoutsfl.com
                         </div>
                       </div>
                     </a>

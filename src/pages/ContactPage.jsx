@@ -105,7 +105,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <div className="text-white/45 font-mono text-[10px] uppercase tracking-[0.12em] mb-0.5">Email</div>
-                        <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors whitespace-nowrap text-[11px] sm:text-sm">
+                        <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors whitespace-nowrap text-[13px] sm:text-[15px]">
                           support@castawaycleanoutsfl.com
                         </div>
                       </div>
