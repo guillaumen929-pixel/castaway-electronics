@@ -100,12 +100,12 @@ export default function Footer() {
           <p className="text-white/40 font-mono text-[10px] tracking-[0.1em]">
             Powered by{' '}
             <a
-              href="http://cspromedia.com/"
+              href="https://scryptera.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#D4AE45] hover:text-white transition-colors"
             >
-              Pros
+              Scryptera
             </a>
           </p>
         </div>
