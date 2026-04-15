@@ -2,10 +2,8 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Leaf, ShieldCheck, Users, CheckCircle2, ArrowRight, Truck, Phone } from 'lucide-react'
 import PageBanner from '../components/PageBanner'
-import AreasServed from '../components/AreasServed'
 import Eyebrow from '../components/ui/Eyebrow'
 import heroImg from '../assets/hero-circuit.webp'
-import productsImg from '../assets/products-layout.webp'
 import vanImg from '../assets/van.webp'
 
 function FadeUp({ children, delay = 0, className = '' }) {
@@ -74,59 +72,43 @@ export default function AboutPage() {
 
       {/* ─── MAIN ABOUT ─── */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Image */}
-            <FadeUp>
-              <div className="relative rounded-lg overflow-hidden aspect-[4/3] max-h-[520px]">
-                <img
-                  src={productsImg}
-                  alt="Electronics we accept — devices and cables"
-                  className="w-full h-full object-cover"
-                />
-                {/* Teal accent bar */}
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#00C4B4]" />
-              </div>
-            </FadeUp>
-
-            {/* Text */}
-            <FadeUp delay={0.2}>
-              <Eyebrow tone="teal" className="mb-3">
-                // 01 — Our Story
-              </Eyebrow>
-              <h2 className="font-head font-extrabold uppercase tracking-[0.02em] text-3xl lg:text-5xl text-[#0D1B2A] mb-6 leading-[0.95]">
-                Cast Away Cleanouts<br />
-                <span className="text-[#00C4B4]">Electronics & Recycling</span>
-              </h2>
-              <div className="space-y-4 text-[#4A5568] font-body leading-[1.8] text-base">
-                <p>
-                  Cast Away Cleanouts — Electronics &amp; Recycling is a professional e-waste
-                  recycling and certified data destruction company serving South Florida since
-                  2014. As a sister company to Cast Away Cleanouts Estate &amp; Property
-                  Cleanouts, we bring the same trusted, reliable service to the world of
-                  electronics disposal.
-                </p>
-                <p>
-                  We help homeowners, businesses, IT departments, schools, and property managers
-                  safely and responsibly dispose of electronics — from single devices to full
-                  office cleanouts. Our certified data destruction services ensure your sensitive
-                  information is permanently and securely eliminated before any device leaves
-                  our hands.
-                </p>
-                <p>
-                  We are committed to keeping South Florida&apos;s environment clean by recycling
-                  and repurposing as much electronic material as possible, and disposing of the
-                  rest through certified eco-friendly channels.
-                </p>
-              </div>
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 text-[#00C4B4] font-body font-semibold mt-6 hover:gap-3 transition-all duration-200"
-              >
-                Learn About Our Services <ArrowRight size={16} />
-              </Link>
-            </FadeUp>
-          </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeUp>
+            <Eyebrow tone="teal" className="mb-3">
+              // 01 — Our Story
+            </Eyebrow>
+            <h2 className="font-head font-extrabold uppercase tracking-[0.02em] text-3xl lg:text-5xl text-[#0D1B2A] mb-6 leading-[0.95]">
+              Cast Away Cleanouts<br />
+              <span className="text-[#00C4B4]">Electronics & Recycling</span>
+            </h2>
+            <div className="space-y-4 text-[#4A5568] font-body leading-[1.8] text-base">
+              <p>
+                Cast Away Cleanouts — Electronics &amp; Recycling is a professional e-waste
+                recycling and certified data destruction company serving South Florida since
+                2014. As a sister company to Cast Away Cleanouts Estate &amp; Property
+                Cleanouts, we bring the same trusted, reliable service to the world of
+                electronics disposal.
+              </p>
+              <p>
+                We help homeowners, businesses, IT departments, schools, and property managers
+                safely and responsibly dispose of electronics — from single devices to full
+                office cleanouts. Our certified data destruction services ensure your sensitive
+                information is permanently and securely eliminated before any device leaves
+                our hands.
+              </p>
+              <p>
+                We are committed to keeping South Florida&apos;s environment clean by recycling
+                and repurposing as much electronic material as possible, and disposing of the
+                rest through certified eco-friendly channels.
+              </p>
+            </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-[#00C4B4] font-body font-semibold mt-6 hover:gap-3 transition-all duration-200"
+            >
+              Learn About Our Services <ArrowRight size={16} />
+            </Link>
+          </FadeUp>
         </div>
       </section>
 
@@ -251,8 +233,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── AREAS SERVED ─── */}
-      <AreasServed />
     </>
   )
 }
