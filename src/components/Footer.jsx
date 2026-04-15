@@ -48,7 +48,7 @@ export default function Footer() {
               {[
                 { to: '/about', label: 'About' },
                 { to: '/services', label: 'Services' },
-                { to: '/contact', label: 'Contact Us' },
+                { to: '/contact#contact-card', label: 'Contact Us' },
                 { to: '/quote', label: 'Get a Quote' },
               ].map(({ to, label }) => (
                 <Link
