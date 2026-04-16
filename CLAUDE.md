@@ -10,10 +10,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev        # Start dev server (defaults to :5173, auto-increments if occupied)
 npm run build      # Production build → dist/
 npm run preview    # Serve the dist/ build locally
-npm run lint       # ESLint across all .js/.jsx files, zero warnings allowed
 ```
 
-No test suite is configured.
+No test suite or linter is configured.
+
+**Deployment:** Cloudflare Workers + Static Assets via `wrangler.jsonc`. Pushes to `main` auto-deploy via GitHub integration. Manual deploy: `npx wrangler deploy`.
 
 ---
 
@@ -23,46 +24,60 @@ No test suite is configured.
 
 **Business constants — never change these:**
 - Phone: `954-366-1180`
-- Email: `Info@CastawayCleanouts.com`
+- Email: `support@castawayelectronics.com`
 - Address: `226 Basin Dr, Lauderdale by the Sea, FL 33308`
+- Domain: `castawayelectronicsfl.com`
 - In business since: `2014`
 
 ---
 
 ## Architecture
 
-**Stack:** React 18 + Vite 5 · React Router v6 · Framer Motion · Lucide React · Tailwind CSS 3
+**Stack:** React 18 + Vite 5 · React Router v6 · Framer Motion · Lucide React · Tailwind CSS 3 · Cloudflare Workers (static assets)
 
-`App.jsx` is the root — it wraps everything in `<BrowserRouter>` and renders `<Navbar>` + `<Footer>` on every route, with `<Routes>` in between. The four routes are `/`, `/about`, `/services`, `/contact`.
+`App.jsx` is the root — it wraps everything in `<BrowserRouter>` and renders `<ScrollToTop>` + `<Navbar>` + `<Footer>` on every route, with `<Routes>` in between. The five routes are `/`, `/about`, `/services`, `/contact`, `/quote`.
 
 **Shared components** (used on multiple pages):
-- `AreasServed` — pill grid of 9 service areas + CTA button; accepts optional `heading` prop. Used as the second-to-last section on every page.
-- `PageBanner` — inner-page hero banner with dark overlay and `.circuit-pattern`. Accepts `title`, `subtitle`, `bgImage` props. Used on About, Services, Contact pages (the Home page has its own bespoke hero).
-- `Navbar` — sticky, starts semi-transparent, scrolling past 80px adds shadow. Active link gets a teal underline via React Router's `<NavLink>`.
-- `Footer` — three columns: brand/social · quick links · contact info.
+- `ScrollToTop` — listens to `useLocation` pathname + hash; scrolls to top on route change, or scrolls to hash target element if present.
+- `PageBanner` — inner-page hero banner with dark overlay, `.circuit-pattern`, breadcrumbs, and optional `eyebrow` prop. Used on About, Services, Contact, Quote pages (Home has its own bespoke hero).
+- `Breadcrumbs` — renders Home > Current Page breadcrumb trail; auto-included in `PageBanner`.
+- `Eyebrow` — mono-font section label component (`// Section Name` style); accepts `tone` prop (teal/gold/muted).
+- `BackToTopButton` — fixed bottom-right scroll-to-top button; appears via IntersectionObserver when a trigger element enters viewport. Used on HomePage only.
+- `Navbar` — fixed, 3-column grid layout (logo / centered links / actions). Mobile: hamburger + frosted-glass overlay with nav links, contact rows, and CTA buttons.
+- `Footer` — three columns: brand text + social icons · quick links · contact info. Bottom bar: Powered by Scryptera + copyright.
 
 **Animation pattern:** Every page uses a local `FadeUp` wrapper component (defined inline per page) that wraps `motion.div` with `whileInView` + `viewport={{ once: true }}`. This is intentionally not extracted to a shared component — keep it inline.
 
-**Contact form** (`ContactPage.jsx`) has no backend. On submit it builds a `mailto:` URI and fires `window.location.href`. A local `submitted` state toggles a success message in place of the form.
+**Contact/Quote forms** have no backend. On submit they build a `mailto:` URI and fire `window.location.href`. A local `submitted` state toggles a success message in place of the form.
 
-**Stat counter** (`HomePage.jsx → StatCard`) uses `IntersectionObserver` directly (no library) to count up from 0 to the target value once the element enters the viewport. The `value` prop is a string like `"10+"` or `"100"` — the `%` vs `+` suffix is inferred from whether the string includes `+`.
+**Stat counter** (`HomePage.jsx → StatCard`) uses `IntersectionObserver` directly (no library) to count up from 0 to the target value once the element enters the viewport.
+
+**Service deep-links:** Home page service cards link to `/services#<slug>` which ScrollToTop handles by scrolling to the matching `id` on the Services page.
+
+**Contact Us nav link** points to `/contact#contact-card` to scroll directly to the contact info card.
 
 ---
 
 ## Styling
 
+**Brand Kit v4** — all tokens derived from `castaway-brand-kit-v4.html`.
+
 Tailwind is extended with brand tokens in `tailwind.config.js`:
 
 | Token | Value | Usage |
 |---|---|---|
-| `navy` / `navy.deep` / `navy.card` | `#1B2A3B` / `#0D1B2A` / `#243447` | Backgrounds, nav, footer |
-| `teal` / `teal.dark` | `#00B4D8` / `#0099BB` | CTAs, icons, accents, borders |
+| `navy` / `.deep` / `.surface` / `.raised` / `.card` | `#0D1B2A` / `#112336` / `#1A2F42` / `#243447` | Backgrounds, nav, footer, cards |
+| `teal` / `.bright` / `.dark` | `#00C4B4` / `#17D4C2` / `#009E91` | CTAs, icons, accents, borders |
+| `gold` / `.bright` | `#BF9B30` / `#D4AE45` | Eyebrows, trust signals, accent |
 | `gray-light` | `#F4F6F8` | Alternating section backgrounds |
-| `gold` | `#BF9B30` | Available but not yet used in pages |
-| `font-head` | Syne | All headings via `font-family: font-head` |
+| `error` | `#EF4444` | Error states |
+| `font-head` | Barlow Condensed (600/700/800) | All headings — extrabold uppercase |
 | `font-body` | DM Sans | Body text |
+| `font-mono` | IBM Plex Mono | Eyebrows, labels, badges |
 
-CSS custom properties in `src/index.css` mirror these values for use outside Tailwind. The `.circuit-pattern` utility class (defined in `index.css`) renders a tiled SVG of teal circuit traces — used as a decorative background overlay at low opacity in hero/CTA sections.
+Fonts loaded via Google Fonts `<link>` in `index.html`.
+
+CSS custom properties in `src/index.css` mirror these values and add soft/border rgba variants for teal and gold. The `.circuit-pattern` utility class renders a tiled SVG of teal circuit traces at low opacity.
 
 **Section color pattern (alternating):** white → navy → gray-light → white → ... Pages follow this rhythm; maintain it when adding sections.
 
@@ -70,15 +85,22 @@ CSS custom properties in `src/index.css` mirror these values for use outside Tai
 
 ## Assets
 
-| File | Status | Notes |
-|---|---|---|
-| `src/assets/logo.svg` | Placeholder | Replace with `logo.png`; update import in `Navbar.jsx` |
-| `src/assets/hero-electronics.svg` | Placeholder | Replace with `hero-electronics.jpg`; update imports in `HomePage.jsx` and `AboutPage.jsx` |
+| File | Purpose |
+|---|---|
+| `src/assets/logo.png` | Horizontal logo (4:1 aspect, transparent PNG) — Navbar only |
+| `src/assets/hero-circuit.webp` | Dark circuit boards with glowing teal LEDs — Home hero, About banner |
+| `src/assets/flatlay-electronics.webp` | Top-down electronics flat lay — Services banner + accepted items |
+| `src/assets/van.webp` | Branded company van — About "We Come To You", Contact/Quote banners |
+| `public/og-image.jpg` | Social sharing preview (OG/Twitter card) — JPG of hero circuit image |
+| `public/favicon.svg` | Browser favicon |
 
-Additional images specified in `CastAway_Electronics_Complete_Website.md` (image placement table at the bottom) are not yet placed. Vite imports assets as modules — add files to `src/assets/` and import them directly in the component that uses them.
+Vite imports assets as modules — add files to `src/assets/` and import them directly in the component that uses them. Files in `public/` are served as-is at the root URL.
 
 ---
 
-## Source Documents
+## Deployment
 
-`MASTER_PROMPT_CastAway_Electronics.md` and `CastAway_Electronics_Complete_Website.md` in the project root contain the full design spec, all copy, and the complete image placement table. Refer to these before making content changes.
+- **Host:** Cloudflare Workers + Static Assets
+- **Config:** `wrangler.jsonc` — SPA fallback via `not_found_handling: "single-page-application"`
+- **Build output:** `dist/`
+- **Auto-deploy:** GitHub → Cloudflare on push to `main`
