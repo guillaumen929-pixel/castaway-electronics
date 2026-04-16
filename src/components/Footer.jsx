@@ -1,19 +1,19 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react'
-import logo from '../assets/logo.png'
 
 export default function Footer() {
   return (
     <footer id="site-footer" className="bg-[#0D1B2A] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Col 1: Logo + Tagline */}
+          {/* Col 1: Brand + Tagline */}
           <div>
-            <img
-              src={logo}
-              alt="Cast Away Cleanouts — Electronics & Recycling"
-              className="h-16 w-auto max-w-[280px]"
-            />
+            <div className="font-head text-2xl font-extrabold uppercase tracking-[0.04em] leading-none text-white">
+              Cast Away <span className="text-[#00C4B4]">Cleanouts</span>
+            </div>
+            <div className="mt-2 font-mono text-[10px] font-medium uppercase tracking-[0.22em] text-[#D4AE45]">
+              Electronics · Recycling
+            </div>
             <p className="text-white/60 font-body text-sm mt-4 leading-relaxed">
               South Florida&apos;s Trusted E-Waste Recycling Partner
             </p>
