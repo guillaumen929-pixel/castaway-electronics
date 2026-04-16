@@ -156,7 +156,7 @@ export default function Navbar() {
               </div>
             </a>
             <a
-              href="mailto:support@castawaycleanoutsfl.com"
+              href="mailto:support@castawayelectronics.com"
               className="flex items-center gap-3 rounded-lg px-4 py-3 text-white/80 transition-colors hover:bg-white/5"
             >
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[rgba(191,155,48,0.15)]">
@@ -164,7 +164,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-white/45">Email</span>
-                <span className="font-body font-medium whitespace-nowrap text-[13px] sm:text-sm">support@castawaycleanoutsfl.com</span>
+                <span className="font-body font-medium whitespace-nowrap text-[13px] sm:text-sm">support@castawayelectronics.com</span>
               </div>
             </a>
           </div>

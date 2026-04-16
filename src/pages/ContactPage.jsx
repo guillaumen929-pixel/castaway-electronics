@@ -44,7 +44,7 @@ export default function ContactPage() {
       `Service: ${formData.service}\n\n` +
       `Message:\n${formData.message}`
     )
-    window.location.href = `mailto:support@castawaycleanoutsfl.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:support@castawayelectronics.com?subject=${subject}&body=${body}`
     setSubmitted(true)
   }
 
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="mailto:support@castawaycleanoutsfl.com"
+                      href="mailto:support@castawayelectronics.com"
                       className="flex items-start gap-4 group"
                     >
                       <div className="w-10 h-10 rounded-full bg-[rgba(191,155,48,0.15)] flex items-center justify-center flex-shrink-0 group-hover:bg-[rgba(191,155,48,0.3)] transition-colors">
@@ -106,7 +106,7 @@ export default function ContactPage() {
                       <div>
                         <div className="text-white/45 font-mono text-[10px] uppercase tracking-[0.12em] mb-0.5">Email</div>
                         <div className="text-white font-body font-medium group-hover:text-[#D4AE45] transition-colors whitespace-nowrap text-[13px] sm:text-[15px]">
-                          support@castawaycleanoutsfl.com
+                          support@castawayelectronics.com
                         </div>
                       </div>
                     </a>
