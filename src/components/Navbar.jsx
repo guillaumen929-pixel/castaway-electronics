@@ -81,12 +81,12 @@ export default function Navbar() {
           <div className="hidden items-center gap-2 justify-self-end md:flex lg:gap-3">
             {/* Phone — icon-only at md, full text at lg+ */}
             <a
-              href="tel:9543661180"
-              aria-label="Call 954-366-1180"
+              href="tel:95436611800"
+              aria-label="Call 954-366-11800"
               className="flex h-9 items-center justify-center gap-1.5 rounded-full px-3 font-body text-sm text-white/70 transition-colors hover:bg-white/10 hover:text-white"
             >
               <Phone size={14} className="text-[#00C4B4]" />
-              <span className="hidden lg:inline">954-366-1180</span>
+              <span className="hidden lg:inline">954-366-11800</span>
             </a>
             <Button
               asChild
