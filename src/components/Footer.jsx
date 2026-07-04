@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { MapPin, Phone, Mail, Facebook, Instagram } from 'lucide-react'
+import { MapPin, Phone, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -17,22 +17,6 @@ export default function Footer() {
             <p className="text-white/60 font-body text-sm mt-4 leading-relaxed">
               South Florida&apos;s Trusted E-Waste Recycling Partner
             </p>
-            <div className="flex gap-4 mt-5">
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00C4B4] hover:border-[#00C4B4] transition-colors"
-              >
-                <Facebook size={16} />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-[#00C4B4] hover:border-[#00C4B4] transition-colors"
-              >
-                <Instagram size={16} />
-              </a>
-            </div>
           </div>
 
           {/* Col 2: Quick Links */}
